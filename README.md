@@ -15,6 +15,9 @@ Repositori ini berisi implementasi *node* ROS 2 (Jazzy) untuk mengendalikan perg
 ![Demo Turtlesim](video/untitled.gif)
 
 ## Arsitektur & Mekanisme Kerja
+
+![Diagram Arsitektur ROS 2](img/image.png)
+
 Berdasarkan Technical Documentation Report (TDR) ROS 2 Jazzy Jalisco, arsitektur kendali ini dirancang menggunakan konsep *publisher* asinkron berbasis `rclpy.Node` untuk mengotomatisasi injeksi perintah gerakan secara otonom. Secara teknis, kode ini bekerja dengan menginisialisasi fungsi *timer callback* `move_circle()` yang dieksekusi secara periodik setiap 0.1 detik guna mempublikasikan pesan bertipe `geometry_msgs/msg/Twist` ke dalam topik `/turtle1/cmd_vel`. Sistem ini dapat berjalan secara kontinu dan stabil karena dieksekusi di dalam *loop* `rclpy.spin()` yang menjaga *lifecycle* node tetap aktif, di mana pada setiap siklus putarannya, rutin program akan mengekstraksi nilai parameter terkini (radius dan kecepatan) untuk mengkalkulasi kecepatan sudut dan inject ke sumbu-Z, sehingga memberi perintah kura-kura untuk membentuk lingkaran yang smooth.
 
 ## Apa yang berbeda kali ini?
