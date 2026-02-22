@@ -9,7 +9,7 @@
 
 ---
 
-Repositori ini berisi implementasi *node* ROS 2 (Jazzy) untuk mengendalikan pergerakan Turtlesim dalam lintasan melingkar yang sempurna. Dibuat dengan pendekatan aljabar linear untuk menghasilkan manuver yang presisi dan *parameterized*, bukan sekadar *hardcode* kecepatan biasa.
+Repositori ini berisi implementasi *node* ROS 2 (Jazzy) untuk mengendalikan pergerakan Turtlesim dalam lintasan melingkar yang sempurna
 
 ## Demo Simulasi
 ![Demo Turtlesim](video/untitled.gif)
